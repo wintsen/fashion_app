@@ -1,64 +1,41 @@
 require 'spec_helper'
 
 describe "Static Pages" do
+  subject {page}
 
   #Home Page tests
   describe "Home page" do
-    it "should have h1 'Fashion App'" do
-      visit '/static_pages/home'
-      page.should have_selector('h1', :text => 'Fashion App')
-    end
+    before {visit root_path}
 
-    it "should have the base title" do
-      visit '/static_pages/home'
-      page.should have_selector('title', :text => "Fashion App")
-    end
-
-    it "should not have a custom page title" do
-      visit '/static_pages/home'
-      page.should_not have_selector('title', :text => '| Home')
-    end
+    it { should have_selector('h1', text: 'Fashion App')}
+    it { should have_selector('title', text: full_title(''))}
+    it { should_not have_selector 'title', text: '| Home'}
   end
 
 
   #Help page tests
   describe "Help page" do
-    it "should have the h1 'Help'" do
-      visit '/static_pages/help'
-      page.should have_selector('h1', :text => 'Help')
-    end
+    before {visit help_path}
 
-    it "should have the title 'Help'" do
-      visit '/static_pages/help'
-      page.should have_selector('title', :text => "Fashion App | Help")
-    end
+    it {should have_selector('h1', text: 'Help')}
+    it {should have_selector('title', text: full_title('Help'))}
   end
 
 
   #About page tests
   describe "About page" do
-    it "should have the h1 'About us'" do
-      visit '/static_pages/about'
-      page.should have_selector('h1', :text => 'About Us')
-    end
+    before {visit about_path}
 
-    it "should have the title 'About Us'" do
-      visit '/static_pages/about'
-      page.should have_selector('title', :text => "Fashion App | About Us")
-    end
+    it {should have_selector('h1', text:'About')}
+    it {should have_selector('title', text: full_title('About Us'))}
   end
 
   #Contact page tests
   describe "Contact page" do
-    it "should have the h1 'Contact'" do
-      visit '/static_pages/contact'
-      page.should have_selector('h1', text:'Contact')
-    end
+    before {visit contact_path}
 
-    it "should have the title 'Contact'" do
-      visit '/static_pages/contact'
-      page.should have_selector('title' , text: "Fashion App | Contact")
-    end
+    it {should have_selector('h1', text: 'Contact')}
+    it {should have_selector('title', text: full_title('Contact'))}
   end
 
 end
