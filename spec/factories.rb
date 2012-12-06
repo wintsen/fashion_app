@@ -5,4 +5,8 @@ FactoryGirl.define do
     password "welcome"
     password_confirmation "welcome"
   end
+
+  factory :item do
+    user
+  end
 end

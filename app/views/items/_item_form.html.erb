@@ -1,0 +1,9 @@
+<%= form_for(@item) do |f| %>
+  <%#TODO%>
+  <%#<%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :tag_list, "TAGS" %>
+    <%= f.hidden_field :tag_list %>
+    </div>
+  <%= f.submit "Add to Collection", class: "btn btn-large btn-primary" %>
+<% end %>

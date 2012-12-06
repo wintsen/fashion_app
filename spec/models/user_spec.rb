@@ -16,6 +16,7 @@ describe User do
   it{should respond_to(:password_confirmation)}
   it{should respond_to(:remember_token)}
   it{should respond_to(:authenticate)}
+  it{should respond_to(:items)}
 
   it{should be_valid}
 
@@ -109,5 +110,28 @@ describe User do
   describe "remember token" do
     before {@user.save}
     its(:remember_token) {should_not be_blank}
+  end
+
+  describe "item associations" do
+    before {@user.save}
+    let!(:older_item) do
+      FactoryGirl.create(:item, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_item) do
+      FactoryGirl.create(:item, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right items in the right order" do
+      @user.items.should == [newer_item, older_item]
+    end
+
+    it "should destroy associate items" do
+      items = @user.items.dup
+      @user.destroy
+      items.should_not be_empty
+      items.each do |item|
+        Item.find_by_id(item.id).should be_nil
+      end
+    end
   end
 end
