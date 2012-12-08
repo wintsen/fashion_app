@@ -18,3 +18,20 @@ jQuery ->
             tag.name
         formatSelection: tagFormatSelect = (tag) ->
             tag.name
+
+jQuery ->
+    $('#item_image').fileupload
+        dataType: "script"
+        types = /(\.|\/)(gif|jpe?g|png)$/i
+        add: (e, data) ->
+            file = data.files[0]
+            if types.test(file.type) || types.test(file.name)
+                data.context = $("template-upload", file)
+                $('#item_image').append(data.context)
+                data.submit()
+            else
+                alert("#{file.name} is not a gif, jpeg, or png image file")
+        progress: (e, data) ->
+            if data.context
+                progress = parseInt(data.loaded/data.total * 100, 10)
+                data.context.find('.bar').css('width', progress + '%')

@@ -4,7 +4,11 @@ class ItemsController < ApplicationController
   def index
     @user = User.find(params[:user_id])
     @items = @user.items.paginate(page: params[:page])
-    @item = @user.items.build if signed_in?
+
+    #Form for adding is in same page
+    if signed_in?
+      @item = @user.items.build
+    end
   end
 
   def create

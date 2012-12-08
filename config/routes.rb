@@ -2,6 +2,7 @@ FashionApp::Application.routes.draw do
   resources :users do
     resources :items
   end
+
   resources :sessions, only: [:new, :create, :destroy]
   resources :items, only: [:create, :destroy]
 

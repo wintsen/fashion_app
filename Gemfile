@@ -9,6 +9,11 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'jquery-rails', '2.0.2'
 gem 'acts-as-taggable-on'
 gem 'select2-rails'
+#gem 'carrierwave'
+#gem 'formtastic'
+#gem 'mini_magick'
+gem 'jquery-fileupload-rails'
+gem 'haml'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -35,3 +40,5 @@ end
 group :production do
     gem 'pg', '0.12.2'
 end
+
+gem "mocha", :group => :test
