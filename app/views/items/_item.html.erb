@@ -1,6 +1,7 @@
 <li>
 <span class="name"><%= item.name %> --- </span>
 <span class="tags"><%= item.tag_list %></span>
+<span class="tags"><%= image_tag(item.images.first.original_url) %></span>
 
 <span class="timestamp">
   Added <%= time_ago_in_words(item.created_at) %> ago.

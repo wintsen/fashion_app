@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121206072304) do
+ActiveRecord::Schema.define(:version => 20121208210123) do
+
+  create_table "images", :force => true do |t|
+    t.string   "original_url"
+    t.string   "large_url"
+    t.string   "medium_url"
+    t.string   "small_url"
+    t.string   "thumb_url"
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "images", ["imageable_id", "imageable_type"], :name => "index_images_on_imageable_id_and_imageable_type"
 
   create_table "items", :force => true do |t|
     t.integer  "user_id"
