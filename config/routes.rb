@@ -1,5 +1,8 @@
 FashionApp::Application.routes.draw do
   resources :users do
+    member do
+      get 'feed'
+    end
     resources :items
     resources :pairings
   end
@@ -18,6 +21,7 @@ FashionApp::Application.routes.draw do
   match '/help', to: 'static_pages#help'
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
+  match '/feed', to: 'static_pages#feed'
 
   get "tags" => "static_pages#tags"
 

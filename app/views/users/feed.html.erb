@@ -1,0 +1,11 @@
+<% if @feed.any? %>
+  Feed works
+  <%end%>
+
+<% @feed.each do |i| %>
+  <% if i.is_a?(Item)%>
+    <%= render partial: 'shared/feed_item', locals: {:feed_item => i} %>
+  <% else %>
+    <%= render partial: 'shared/feed_pairing', locals: {:feed_pairing => i} %>
+    <% end %>
+<% end %>

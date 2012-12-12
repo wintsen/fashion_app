@@ -1,0 +1,6 @@
+<% if @feed_pairings.any? %>
+  <ol class="pairings">
+    <%= render partial: 'shared/feed_pairing', collection: @feed_pairings%>
+  </ol>
+  <%= will_paginate @feed_pairings %>
+  <% end %>

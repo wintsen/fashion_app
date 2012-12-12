@@ -4,6 +4,13 @@ class StaticPagesController < ApplicationController
     @items = Item.all
   end
 
+  def feed
+    if signed_in?
+      @feed_pairings = current_user.feed_pairings.paginate(page: params[:page])
+      @feed_items = current_user.feed_items.paginate(page: params[:page])
+    end
+  end
+
   def help
   end
 

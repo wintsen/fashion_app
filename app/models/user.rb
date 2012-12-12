@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   has_secure_password
   has_many :items, dependent: :destroy
   has_many :pairings, dependent: :destroy
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
+  has_many :followed_users, through: :relationships, source: :followed
+  has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy
+  has_many :followers, through: :reverse_relationships, source: :follower
 
   before_save {|user| user.email = email.downcase}
   before_save :create_remember_token
@@ -13,6 +17,18 @@ class User < ActiveRecord::Base
     uniqueness: {case_sensitive: false}
   validates :password, presence: true, length: {minimum: 6}
   validates :password_confirmation, presence: true
+
+  def feed
+    (feed_items + feed_pairings).sort_by(&:created_at).reverse!
+  end
+
+  def feed_items
+    Item.from_users_followed_by(self)
+  end
+
+  def feed_pairings
+    Pairing.from_users_followed_by(self)
+  end
 
   private
   def create_remember_token
