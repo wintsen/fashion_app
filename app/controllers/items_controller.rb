@@ -6,13 +6,20 @@ class ItemsController < ApplicationController
     @items = @user.items.paginate(page: params[:page])
 
     #Form for adding is in same page
+    #TODO: refactor this to the correct place
     if signed_in?
       @item = @user.items.build
+    end
+
+    respond_to do |format|
+      format.json {render json: @items}
+      format.html
     end
   end
 
   def create
     @item = current_user.items.build(params[:item])
+
     if @item.save
       flash[:success] = "Added to Collection!"
       redirect_to user_items_path(current_user)
@@ -25,19 +32,4 @@ class ItemsController < ApplicationController
   def destroy
   end
 
-  def tags
-    #Get all tags that match
-    @tags = ActsAsTaggableOn::Tag.where("tags.name LIKE ?", "%#{params[:q]}%")
-
-    #Add new tag if does not exist
-    @return = @tags.collect {|t| {:id => t.name, :name => t.name}}
-    @return << ({id: params[:q], name: params[:q]})
-    #if @return.empty?
-      #@return << ({id: params[:q], name: params[:q]})
-    #end
-
-    respond_to do |format|
-      format.json {render :json => @return}
-    end
-  end
 end

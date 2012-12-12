@@ -4,6 +4,12 @@
 <h2>
   This is the home page for the Fashion app.
 </h2>
-
-<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+<section>
+      <ol class="pairings">
+        <%= render @pairings %>
+      </ol>
+      <ol class="items">
+       <%= render @items %>
+      </ol>
+</section>
 </div>

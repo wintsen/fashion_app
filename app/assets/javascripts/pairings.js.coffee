@@ -4,8 +4,8 @@
 
 #For Tag list form
 jQuery ->
-    $('#item_tag_list').select2
-        placeholder: "Add tags to describe your item!"
+    $('#pairing_tag_list').select2
+        placeholder: "Add tags to describe your pairing!"
         width: "300px"
         multiple: true
         ajax:
@@ -21,14 +21,33 @@ jQuery ->
         formatSelection: tagFormatSelect = (tag) ->
             tag.name
 
+#For Item list form
+jQuery ->
+    $('#pairing_item_array').select2
+        placeholder: "Items used in pairing"
+        width: "300px"
+        multiple: true
+        ajax:
+            url: "items.json"
+            dataType: "json"
+            quietMillis: 100
+            data: (term, page) ->
+            results: (data, page) ->
+                results: data
+        formatResult: itemFormatResult = (item) ->
+            item.name
+        formatSelection: itemFormatSelect = (item) ->
+            item.name
+
 #helper function
 @uniq = 0
 @addimage = (url) ->
     div = document.createElement("div")
     uniqid = uniq++
-    div.innerHTML = "<input name=\"item[images_attributes][#{uniqid}][original_url]\" type=\"text\" value=\"#{url}\">"
+    div.innerHTML = "<input name=\"pairing[images_attributes][#{uniqid}][original_url]\" type=\"text\" value=\"#{url}\">"
     parent = document.getElementsByClassName("field")[0]
     parent.appendChild(div)
+
 
 #Image upload
 jQuery ->

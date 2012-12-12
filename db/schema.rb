@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121208210123) do
+ActiveRecord::Schema.define(:version => 20121210100909) do
 
   create_table "images", :force => true do |t|
     t.string   "original_url"
@@ -35,6 +35,26 @@ ActiveRecord::Schema.define(:version => 20121208210123) do
   end
 
   add_index "items", ["user_id"], :name => "index_items_on_user_id"
+
+  create_table "pairing_items", :id => false, :force => true do |t|
+    t.integer  "pairing_id"
+    t.integer  "item_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "pairing_items", ["item_id"], :name => "index_pairing_items_on_item_id"
+  add_index "pairing_items", ["pairing_id", "item_id"], :name => "index_pairing_items_on_pairing_id_and_item_id", :unique => true
+  add_index "pairing_items", ["pairing_id"], :name => "index_pairing_items_on_pairing_id"
+
+  create_table "pairings", :force => true do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "pairings", ["user_id"], :name => "index_pairings_on_user_id"
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"

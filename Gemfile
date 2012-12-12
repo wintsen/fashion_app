@@ -14,6 +14,7 @@ gem 'select2-rails'
 #gem 'mini_magick'
 gem 'jquery-fileupload-rails'
 gem 'haml'
+gem 'localtunnel'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

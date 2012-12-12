@@ -1,0 +1,22 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <section>
+      <%= render 'pairings/pairing_form' %>
+      </section>
+  </aside>
+  <div class="span8">
+    <% if @user.pairings.any? %>
+      <h3>Pairings (<%= @user.pairings.count %>)</h3>
+      <ol class="pairings">
+        <%= render @pairings %>
+      </ol>
+      <%= will_paginate @pairings %>
+    <% end %>
+  </div>
+</div>

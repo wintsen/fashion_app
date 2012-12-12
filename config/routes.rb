@@ -1,10 +1,13 @@
 FashionApp::Application.routes.draw do
   resources :users do
     resources :items
+    resources :pairings
   end
 
   resources :sessions, only: [:new, :create, :destroy]
   resources :items, only: [:create, :destroy]
+  resources :pairings, only: [:create, :destroy]
+  resources :pairingitems, only: [:create, :destroy]
 
   match '/signup', to: 'users#new'
   match '/signin', to: 'sessions#new'
@@ -16,8 +19,7 @@ FashionApp::Application.routes.draw do
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
 
-  get "tags" => "items#tags", :as => :tags
-
+  get "tags" => "static_pages#tags"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
