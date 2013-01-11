@@ -8,8 +8,9 @@ FashionApp::Application.routes.draw do
   end
 
   resources :sessions, only: [:new, :create, :destroy]
-  resources :items, only: [:create, :destroy]
-  resources :pairings, only: [:create, :destroy]
+  resources :items, only: [:create, :destroy, :show]
+  resources :pairings, only: [:create, :destroy, :show]
+  resources :relationships, only: [:create, :destroy]
   resources :pairingitems, only: [:create, :destroy]
 
   match '/signup', to: 'users#new'
@@ -21,7 +22,6 @@ FashionApp::Application.routes.draw do
   match '/help', to: 'static_pages#help'
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'
-  match '/feed', to: 'static_pages#feed'
 
   get "tags" => "static_pages#tags"
 

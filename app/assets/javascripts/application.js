@@ -16,4 +16,7 @@
 //= require jquery-fileupload/vendor/tmpl
 //= require select2
 //= require bootstrap
+//= require gridalicious
 //= require_tree .
+//= bootstrap-modal
+//= bootstrap-modalmanager

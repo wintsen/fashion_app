@@ -11,4 +11,5 @@
  *= require select2
  *= require_self
  *= require_tree .
+ *= bootstrap-modal
  */

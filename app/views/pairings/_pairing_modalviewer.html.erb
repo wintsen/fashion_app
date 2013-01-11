@@ -1,0 +1,83 @@
+<!--Modal Header-->
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    <div class="row-fluid">
+      <div class="span1">
+        <%= link_to(image_tag(@pairing.user.images.first.small_url.to_s), user_path(@pairing.user)) %>
+      </div>
+      <div class="span10">
+        <strong>
+        <%= link_to(@pairing.user.name, user_path(@pairing.user)) %>
+        </strong>
+        <br>
+        <%= @pairing.name %>
+        <%= time_ago_in_words(@pairing.created_at) %> ago
+      </div>
+    </div>
+  </div>
+  <!--Modal Body-->
+  <div class="modal-body">
+    <div class="row-fluid">
+      <!--Body-Left Carousel-->
+      <div id="<%= "paircarousel#{@pairing.id}" %>" class="carousel span8">
+        <!--Carousel items-->
+        <div class="carousel-inner">
+          <% @pairing.images.each_with_index do |image, index| %>
+            <div class="item <% if index == 0 %>active<%end%>">
+              <div class="vcenter">
+                <%= image_tag("furley_bg.png", {lazycontent: image.large_url.to_s}) %>
+              </div>
+          </div>
+          <% end %>
+        </div>
+
+        <!-- <div class="carousel-caption">
+            <%@pairing.items.each do |item| %>
+          <%= link_to(image_tag("furley_bg.png",{lazycontent: item.images.first.thumb_url.to_s, size: "50x50"}), "#item#{item.id}", data:{toggle:"modal"}) %>
+        <%end%>
+          </div> -->
+          
+        <!--Carousel nav-->
+        <a class="carousel-control left" href="#<%="paircarousel#{@pairing.id}"%>" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#<%="paircarousel#{@pairing.id}"%>" data-slide="next">&rsaquo;</a>
+      </div>
+
+      <!--Body-Right-->
+      <div class="span4">
+        <!--Tags-->
+        <h4 class="no-pad-top">
+          Tags
+        </h4>
+        <div class="viewer-tags">
+          <p>
+            <%= @pairing.tag_list %>
+          </p>
+        </div>
+        <!--Comment-->
+        <h4>
+          Comments
+        </h4>
+        <div class="viewer-comments">
+          <% @pairing.comment_pairings.each do |comment| %>
+            <%= image_tag(comment.user.images.first.thumb_url.to_s) %>
+            <%= comment.comment %>
+            <br>
+          <% end %>
+        </div>
+        <%= render 'shared/comment_form' %>
+      </div>
+
+    </div>
+
+
+    <div class="row-fluid">
+      <div class="span12">
+        <h4>Paired With</h4>
+        <%@pairing.items.each do |item| %>
+          <%= image_tag("furley_bg.png",{lazycontent: item.images.first.small_url.to_s, size: "150x150"}) %>
+        <%end%>
+      </div>
+    </div>
+
+
+  </div>

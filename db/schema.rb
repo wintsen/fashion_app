@@ -11,7 +11,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121212031742) do
+ActiveRecord::Schema.define(:version => 20121214061903) do
+
+  create_table "comment_items", :id => false, :force => true do |t|
+    t.integer  "item_id"
+    t.integer  "user_id"
+    t.text     "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "comment_items", ["item_id"], :name => "index_comment_items_on_item_id"
+  add_index "comment_items", ["user_id"], :name => "index_comment_items_on_user_id"
+
+  create_table "comment_pairings", :id => false, :force => true do |t|
+    t.integer  "pairing_id"
+    t.integer  "user_id"
+    t.text     "comment"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "comment_pairings", ["pairing_id"], :name => "index_comment_pairings_on_pairing_id"
+  add_index "comment_pairings", ["user_id"], :name => "index_comment_pairings_on_user_id"
 
   create_table "images", :force => true do |t|
     t.string   "original_url"
@@ -35,6 +57,28 @@ ActiveRecord::Schema.define(:version => 20121212031742) do
   end
 
   add_index "items", ["user_id"], :name => "index_items_on_user_id"
+
+  create_table "like_items", :id => false, :force => true do |t|
+    t.integer  "item_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "like_items", ["item_id", "user_id"], :name => "index_like_items_on_item_id_and_user_id", :unique => true
+  add_index "like_items", ["item_id"], :name => "index_like_items_on_item_id"
+  add_index "like_items", ["user_id"], :name => "index_like_items_on_user_id"
+
+  create_table "like_pairings", :id => false, :force => true do |t|
+    t.integer  "pairing_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "like_pairings", ["pairing_id", "user_id"], :name => "index_like_pairings_on_pairing_id_and_user_id", :unique => true
+  add_index "like_pairings", ["pairing_id"], :name => "index_like_pairings_on_pairing_id"
+  add_index "like_pairings", ["user_id"], :name => "index_like_pairings_on_user_id"
 
   create_table "pairing_items", :id => false, :force => true do |t|
     t.integer  "pairing_id"

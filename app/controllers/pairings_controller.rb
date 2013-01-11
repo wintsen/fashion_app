@@ -25,4 +25,10 @@ class PairingsController < ApplicationController
 
   def destroy
   end
+
+  def show
+    #TODO respond_to different types of request, XHR or html
+    @pairing = Pairing.find(params[:id])
+    render '_pairing_modalviewer', layout: false
+  end
 end

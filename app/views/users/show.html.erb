@@ -1,2 +1,4 @@
 <% provide(:title, @user.name) %>
 <h1><%= @user.name %></h1>
+<%= image_tag(@user.images.last.medium_url)%>
+<%= render 'follow_form' if signed_in? %>

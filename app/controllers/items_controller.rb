@@ -32,4 +32,10 @@ class ItemsController < ApplicationController
   def destroy
   end
 
+  def show
+    #TODO respond_to different types of request, XHR or html
+    @item = Item.find(params[:id])
+    render '_item_modalviewer', layout: false
+  end
+
 end

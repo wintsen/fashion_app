@@ -11,9 +11,18 @@ class Item < ActiveRecord::Base
   has_many :images, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :images
 
+  #Like/Comment
+  has_many :like_items
+  has_many :user_likes, through: :like_items, source: :user
+  has_many :comment_items
+  # User and comments go together
+  # has_many :commenting_users, through: :comment_items, source: :user
+
+  #Validation
   validates :user_id, presence: true
   validates :name, presence: true
 
+  #Retrieval order
   default_scope order: 'items.created_at DESC'
 
   def self.from_users_followed_by(user)

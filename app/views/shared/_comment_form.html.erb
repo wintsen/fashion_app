@@ -1,0 +1,11 @@
+<div class="row well small-well">
+  <div class="pull-left">
+  	<!-- TODO better handling no user -->
+	<%if current_user %>
+	    <%= image_tag(current_user.images.first.thumb_url.to_s)%>
+    <%end%>
+  </div>
+  <div class="span10">
+    <textarea class="span12" rows="1" placeholder="Comment..."></textarea>
+  </div>
+</div>

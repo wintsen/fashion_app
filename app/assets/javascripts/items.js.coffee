@@ -24,11 +24,12 @@ jQuery ->
 #helper function
 @uniq = 0
 @addimage = (url) ->
-    div = document.createElement("div")
-    uniqid = uniq++
-    div.innerHTML = "<input name=\"item[images_attributes][#{uniqid}][original_url]\" type=\"text\" value=\"#{url}\">"
+    template = document.getElementById("image_field").cloneNode()
     parent = document.getElementsByClassName("field")[0]
-    parent.appendChild(div)
+    uniqid = uniq++
+    template.setAttribute("name", template.getAttribute("name") + "[#{uniqid}[original_url]")
+    template.setAttribute("value", url)
+    parent.appendChild(template)
 
 #Image upload
 jQuery ->
@@ -52,12 +53,7 @@ jQuery ->
             file = data.files[0]
             domain = $('#fileupload').attr('action')
             path = $('#fileupload input[name=key]').val().replace('${filename}', file.name)
-            #to = $('#fileupload').data('post')
-            #content = {}
-            #content[$('#fileupload').data('as')] = domain + path
             addimage(domain+path)
-            #$.post(to, content)
-            #data.context.remove() if data.context
 
         fail: (e, data) ->
             alert("#{data.files[0].name} failed to upload.")

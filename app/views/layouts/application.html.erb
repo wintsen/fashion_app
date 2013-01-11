@@ -8,13 +8,16 @@
 <%= render 'layouts/shim' %>
 </head>
 <body>
+<div class="page-container">
 <%= render 'layouts/header' %>
-<div class="container">
+<div class="content">
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "alert alert-#{key}") %>
     <% end %>
   <%= yield %>
   <%= render 'layouts/footer' %>
 </div>
+</div>
+<div id="ajax-modal" class="modal container narrow fade hide" tabindex="-1"></div>
 </body>
 </html>

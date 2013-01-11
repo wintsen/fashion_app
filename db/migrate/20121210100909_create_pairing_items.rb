@@ -1,6 +1,6 @@
 class CreatePairingItems < ActiveRecord::Migration
   def change
-    create_table :pairing_items, {:id => false, :force => true} do |t|
+    create_table :pairing_items, :id => false do |t|
       t.references :pairing
       t.references :item
 

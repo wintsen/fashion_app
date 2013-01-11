@@ -1,0 +1,540 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"item",
+				"item_id"
+			],
+			[
+				"pai",
+				"pairing_id"
+			],
+			[
+				"user",
+				"user_id"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/Vincent/Documents/rails_projects/fashion_app/app/views/pairings/_pairing.html.erb",
+			"settings":
+			{
+				"buffer_size": 3560,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Vincent/Documents/rails_projects/fashion_app/app/assets/javascripts/pairings.js.coffee",
+			"settings":
+			{
+				"buffer_size": 3093,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Vincent/Documents/rails_projects/fashion_app/app/views/static_pages/home.html.erb",
+			"settings":
+			{
+				"buffer_size": 447,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/Vincent/Documents/rails_projects/fashion_app/app/assets/javascripts/users.js.coffee",
+			"settings":
+			{
+				"buffer_size": 356,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_item.html.erb",
+			"settings":
+			{
+				"buffer_size": 3167,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_item_form.html.erb",
+			"settings":
+			{
+				"buffer_size": 609,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"aa",
+				"Snippet: attr_accessor .."
+			]
+		],
+		"width": 530.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/controllers/static_pages_controller.rb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/views/items/_item.html.erb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/views/static_pages/home.html.erb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/views/pairings/_pairing.html.erb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/models/comment_pairing.rb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/models/pairing.rb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/assets/stylesheets/custom.css.scss",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/views/shared/_comment_form.html.erb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/db/migrate/20121214060824_create_comment_items.rb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/db/migrate/20121214061903_create_comment_pairings.rb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/lib/tasks/populate.rake",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/db/migrate/20121204044629_create_items.rb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/models/comment_item.rb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/models/pairing_item.rb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/models/item.rb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/models/user.rb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/models/like_pairing.rb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/models/like_item.rb",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/app/models/relationship.rb",
+		"/Users/Vincent/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/Vincent/Documents/rails_projects/fashion_app/.rspec"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"caption",
+			"lazylaunc",
+			"modal",
+			"toggle",
+			"lazylaun",
+			"large",
+			"pair",
+			"pairing",
+			"pair",
+			"like",
+			"times",
+			"times\ntimes",
+			"times\n",
+			"times"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"item"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/Vincent/Documents/rails_projects/fashion_app/app/views/pairings/_pairing.html.erb",
+					"settings":
+					{
+						"buffer_size": 3560,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1396,
+								1396
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 309.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/Vincent/Documents/rails_projects/fashion_app/app/assets/javascripts/pairings.js.coffee",
+					"settings":
+					{
+						"buffer_size": 3093,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								392,
+								392
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/Users/Vincent/Documents/rails_projects/fashion_app/app/views/static_pages/home.html.erb",
+					"settings":
+					{
+						"buffer_size": 447,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								215,
+								215
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "/Users/Vincent/Documents/rails_projects/fashion_app/app/assets/javascripts/users.js.coffee",
+					"settings":
+					{
+						"buffer_size": 356,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								355,
+								355
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "_item.html.erb",
+					"settings":
+					{
+						"buffer_size": 3167,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								541,
+								541
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "_item_form.html.erb",
+					"settings":
+					{
+						"buffer_size": 609,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"_itemf",
+				"app/views/items/_item_form.html.erb"
+			],
+			[
+				"use",
+				"app/assets/javascripts/users.js.coffee"
+			],
+			[
+				"stat",
+				"app/controllers/static_pages_controller.rb"
+			],
+			[
+				"hom",
+				"app/views/static_pages/home.html.erb"
+			],
+			[
+				"_i",
+				"app/views/items/_item.html.erb"
+			],
+			[
+				"js",
+				"app/assets/javascripts/pairings.js.coffee"
+			],
+			[
+				"_pa",
+				"app/views/pairings/_pairing.html.erb"
+			],
+			[
+				"home",
+				"app/views/static_pages/home.html.erb"
+			],
+			[
+				"_pai",
+				"app/views/pairings/_pairing.html.erb"
+			],
+			[
+				"cus",
+				"app/assets/stylesheets/custom.css.scss"
+			],
+			[
+				"_ite",
+				"app/views/items/_item.html.erb"
+			],
+			[
+				"_com",
+				"app/views/shared/_comment_form.html.erb"
+			],
+			[
+				"2cci",
+				"db/migrate/20121214060824_create_comment_items.rb"
+			],
+			[
+				"2ci",
+				"db/migrate/20121204044629_create_items.rb"
+			],
+			[
+				"comm",
+				"db/migrate/20121214061903_create_comment_pairings.rb"
+			],
+			[
+				"cp",
+				"app/models/comment_pairing.rb"
+			],
+			[
+				"pai",
+				"app/models/pairing.rb"
+			],
+			[
+				"pop",
+				"lib/tasks/populate.rake"
+			],
+			[
+				"_c",
+				"app/views/shared/_comment_form.html.erb"
+			],
+			[
+				"ci",
+				"app/models/comment_item.rb"
+			],
+			[
+				"_comm",
+				"app/views/shared/_comment_form.html.erb"
+			],
+			[
+				"pa",
+				"app/models/pairing.rb"
+			],
+			[
+				"com",
+				"app/models/comment_item.rb"
+			],
+			[
+				"item",
+				"app/models/item.rb"
+			],
+			[
+				"commi",
+				"app/models/comment_item.rb"
+			],
+			[
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"lp",
+				"app/models/like_pairing.rb"
+			],
+			[
+				"like_p",
+				"app/models/like_pairing.rb"
+			],
+			[
+				"relo",
+				"app/models/relationship.rb"
+			],
+			[
+				"like",
+				"app/models/like_item.rb"
+			],
+			[
+				"_pairing.",
+				"app/views/pairings/_pairing.html.erb"
+			],
+			[
+				"cusom",
+				"app/assets/stylesheets/custom.css.scss"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

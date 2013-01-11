@@ -1,14 +1,25 @@
 class StaticPagesController < ApplicationController
+  require 'will_paginate/array'
   def home
-    @pairings = Pairing.all
-    @items = Item.all
-  end
+    #TODO: New items are added all the time, how to scroll down without repeat
+    #TODO: Paginate uses offset, optimize for that case. Now need to come into memory
 
-  def feed
-    if signed_in?
-      @feed_pairings = current_user.feed_pairings.paginate(page: params[:page])
-      @feed_items = current_user.feed_items.paginate(page: params[:page])
+    @items = Array.new
+    @pairings = Array.new
+
+    if(params[:items] != "false")
+      @items = Item.all
     end
+
+    if(params[:pairings] != "false")
+      @pairings = Pairing.all
+    end
+
+    @feed = (@pairings+@items).sort_by(&:created_at).reverse!.paginate(page: params[:page], per_page: 40)
+
+    # @feed = (Pairing.all + Item.all).sort_by(&:created_at).reverse!.paginate(page: params[:page], per_page: 40)
+    # @feed = Item.all.sort_by(&:created_at).reverse!.paginate(page: params[:page], per_page: 20)
+    # @feed = (pairings + items)
   end
 
   def help

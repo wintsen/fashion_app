@@ -1,6 +1,24 @@
-<li>
-<span class="name"><%= pairing.name %> --- </span>
-<span class="timestamp">
-  Added <%= time_ago_in_words(pairing.created_at) %> ago.
-  </span>
-</li>
+<div class="card well">
+  <div class="poster">
+    <div class="avatar">
+      <%= link_to(image_tag(pairing.user.images.first.small_url.to_s), user_path(pairing.user)) %>
+    </div>
+    <div class="username">
+      <%= link_to(pairing.user.name, user_path(pairing.user)) %>
+    </div>
+    <div class="timestamp">
+      <%= time_ago_in_words(pairing.created_at) %> ago
+    </div>
+  </div>
+
+  <div class="image">
+    <%= link_to(image_tag(pairing.images.first.medium_url.to_s), "pairings/#{pairing.id}", data: {toggle:"modal"}, class: "modallauncher") %>
+  </div>
+  <div class="cardtitle">
+    <%= pairing.name %>
+  </div>
+  <p class="faded">
+  <span class="like_counter"><%= "#{pairing.like_pairings.count} Likes" %></span>
+  <span class="comment_counter"><%= "#{pairing.comment_pairings.count} Comments" %></span>
+  </p>
+</div>

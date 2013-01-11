@@ -11,9 +11,18 @@ class Pairing < ActiveRecord::Base
   has_many :images, as: :imageable, dependent: :destroy
   accepts_nested_attributes_for :images
 
+  #Like/Comment
+  has_many :like_pairings
+  has_many :user_likes, through: :like_pairings, source: :user
+  has_many :comment_pairings
+  # User and comments go together
+  # has_many :commenting_users, through: :comment_pairings, source: :user
+
+  #Validation
   validates :user_id, presence: true
   validates :name, presence: true
 
+  #Retrieval order
   default_scope order: 'pairings.created_at DESC'
 
   def item_array

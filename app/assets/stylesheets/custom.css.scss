@@ -1,4 +1,53 @@
 @import "bootstrap";
+@import "bootstrap-modal";
+/* test*/
+
+.carousel{
+
+  .item{
+
+    img{
+      margin: 0 auto;
+      box-shadow: 0px 3px 10px #888;
+    }
+  }
+}
+
+.vcenter{
+  display:table-cell;
+  text-align: center;
+  vertical-align: middle;
+  height: 612px;
+  width: 600px;
+}
+
+.modal.container{
+  width: 950px;
+  margin-left: -475px;
+}
+
+.small-well{
+  padding-bottom: 2px;
+  padding-top: 8px;
+  padding-left: 8px;
+  padding-right: 0px;
+  margin-left:0px;
+  margin-bottom:0px;
+}
+
+.viewer-comments{
+  max-height: 434px;
+  overflow-y: scroll;
+}
+
+.viewer-tags{
+  height: 56px;
+  overflow-y: scroll;
+}
+
+.no-pad-top{
+  margin-top: 0px;
+}
 
 /* mixins, variables, etc. */
 
@@ -6,12 +55,14 @@ $grayMediumLight: #eaeaea;
 
 /* universal */
 
-html {
-  overflow-y: scroll;
-}
+/*html {*/
+  /*overflow-y: scroll;*/
+/*}*/
 
 body {
   padding-top: 60px;
+  background: url('/assets/furley_bg.png');
+  background-repeat: repeat;
 }
 
 section {
@@ -51,9 +102,22 @@ h2 {
   color: $grayLight;
 }
 
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
+/*p {*/
+  /*font-size: 1.1em;*/
+  /*line-height: 1.7em;*/
+/*}*/
+
+a:link{
+  color: $black;
+}
+a:visited{
+  color: $black;
+}
+a:hover{
+  color: $black;
+}
+a:active{
+  color: $black;
 }
 
 
@@ -100,3 +164,66 @@ footer {
     }
   }
 }
+
+/* card */
+
+.card {
+  width:204px;
+  display: block;
+  position: relative;
+  background-color: $white;
+  /*padding: 0px;*/
+  padding-left: 15px;
+  padding-top: 0px;
+  padding-right: 15px;
+  padding-bottom: 2px;
+  box-shadow: 0 0 5px #888;
+
+  .poster{
+    background-color: #f0f0f0;
+    display: block;
+    width: 204px;
+    padding-top: 6px;
+    padding-bottom: 2px;
+    padding-left: 6px;
+    padding-right: 24px;
+    margin-left:-15px;
+
+    .avatar {
+      float: left;
+      margin-right:10px;
+      width: 32px;
+    }
+
+    .username {
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom:-2px;
+    }
+
+    .timestamp {
+      font-weight: bold;
+      font-size:12px;
+      color:#888;
+    }
+  }
+
+  .image {
+    width:204px;
+    display: block;
+    position: relative;
+    margin-top:14px;
+    margin-bottom:10px;
+  }
+
+  .faded {
+    width: 204px;
+    display: block;
+    position: relative;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #888;
+  }
+}
+

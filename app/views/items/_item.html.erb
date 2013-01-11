@@ -1,13 +1,24 @@
-<li>
-<span class="name"><%= item.name %> --- </span>
-<span class="tags"><%= item.tag_list %></span>
-<span class="tags">
-  <% if item.images.any? %>
-    <%= image_tag(item.images.first.original_url.to_s) %>
-  <% end %>
-</span>
+<div class="card well">
+  <div class="poster">
+  <div class="avatar">
+    <%= link_to(image_tag(item.user.images.first.small_url.to_s), user_path(item.user))%>
+  </div>
+  <div class="username">
+    <%= link_to(item.user.name, user_path(item.user)) %>
+  </div>
+  <div class="timestamp">
+    <%= time_ago_in_words(item.created_at) %> ago
+  </div>
+</div>
 
-<span class="timestamp">
-  Added <%= time_ago_in_words(item.created_at) %> ago.
-</span>
-</li>
+<div class="image">
+  <%= link_to(image_tag(item.images.first.medium_url.to_s), "items/#{item.id}", data: {toggle:"modal"}, class: "modallauncher") %>
+</div>
+  <div class="cardtitle">
+    <%= item.name %>
+  </div>
+<p class="faded">
+  <span class="like_counter"><%= "#{item.like_items.count} Likes" %></span>
+  <span class="comment_counter"><%= "#{item.comment_items.count} Comments" %></span>
+</p>
+</div>

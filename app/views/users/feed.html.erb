@@ -1,11 +1,14 @@
-<% if @feed.any? %>
-  Feed works
-  <%end%>
 
-<% @feed.each do |i| %>
-  <% if i.is_a?(Item)%>
-    <%= render partial: 'shared/feed_item', locals: {:feed_item => i} %>
-  <% else %>
-    <%= render partial: 'shared/feed_pairing', locals: {:feed_pairing => i} %>
+<!-- Feed Section -->
+<% if !@feed.any? %>
+  You have nothing in your feed :(
+<%end%>
+<div id="cardgrid">
+  <% @feed.each do |i| %>
+    <% if i.is_a?(Item)%>
+      <%= render partial: 'items/item', locals: {:item => i} %>
+    <% else %>
+      <%= render partial: 'pairings/pairing', locals: {:pairing => i} %>
     <% end %>
-<% end %>
+  <% end %>
+</div>

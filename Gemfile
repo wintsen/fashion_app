@@ -1,12 +1,11 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
-gem 'bootstrap-sass', '2.0.4'
+gem 'bootstrap-sass'
 gem 'bcrypt-ruby', '3.0.1'
-gem 'faker', '1.0.1'
 gem 'will_paginate', '3.0.3'
 gem 'bootstrap-will_paginate', '0.0.6'
-gem 'jquery-rails', '2.0.2'
+gem 'jquery-rails'
 gem 'acts-as-taggable-on'
 gem 'select2-rails'
 #gem 'carrierwave'
@@ -14,7 +13,7 @@ gem 'select2-rails'
 #gem 'mini_magick'
 gem 'jquery-fileupload-rails'
 gem 'haml'
-gem 'localtunnel'
+#gem 'bootstrap_modal_rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -28,7 +27,10 @@ group :development, :test do
     gem 'spork', '0.9.2'
     gem 'capybara', '1.1.2'
     gem 'factory_girl_rails', '4.1.0'
+    gem 'faker'
+    gem 'populator'
 end
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -42,4 +44,4 @@ group :production do
     gem 'pg', '0.12.2'
 end
 
-gem "mocha", :group => :test
+#gem "mocha", :group => :test
