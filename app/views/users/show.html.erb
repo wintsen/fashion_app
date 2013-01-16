@@ -2,3 +2,19 @@
 <h1><%= @user.name %></h1>
 <%= image_tag(@user.images.last.medium_url)%>
 <%= render 'follow_form' if signed_in? %>
+
+<!--search and filter-->
+<%= render partial:'shared/searchfilter'%>
+<!--search and filter-->
+
+<div id="cardgrid">
+  <% @feed.each do |i| %>
+    <% if i.is_a?(Item)%>
+      <%= render partial: 'items/item', locals: {:item => i} %>
+    <% else %>
+      <%= render partial: 'pairings/pairing', locals: {:pairing => i} %>
+    <% end %>
+  <% end %>
+</div>
+
+<%= will_paginate @feed %>

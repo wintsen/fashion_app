@@ -1,8 +1,7 @@
+<!--search and filter-->
+<%= render partial:'shared/searchfilter'%>
+<!--search and filter-->
 
-<!-- Feed Section -->
-<% if !@feed.any? %>
-  You have nothing in your feed :(
-<%end%>
 <div id="cardgrid">
   <% @feed.each do |i| %>
     <% if i.is_a?(Item)%>
@@ -12,3 +11,5 @@
     <% end %>
   <% end %>
 </div>
+
+<%= will_paginate @feed %>

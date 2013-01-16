@@ -12,7 +12,7 @@
   </div>
 
   <div class="image">
-    <%= link_to(image_tag(pairing.images.first.medium_url.to_s), "pairings/#{pairing.id}", data: {toggle:"modal"}, class: "modallauncher") %>
+    <%= link_to(image_tag(pairing.images.first.medium_url.to_s), "", data: {toggle:"modal"}, class: "modallauncher", modal: pairing_path(pairing)) %>
   </div>
   <div class="cardtitle">
     <%= pairing.name %>

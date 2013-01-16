@@ -1,25 +1,18 @@
 class StaticPagesController < ApplicationController
   require 'will_paginate/array'
+
   def home
-    #TODO: New items are added all the time, how to scroll down without repeat
-    #TODO: Paginate uses offset, optimize for that case. Now need to come into memory
+    #Search
+    @search = Sunspot.search(Item, Pairing) do
+      without(:class, Item) if (params[:items] == "false")
+      without(:class, Pairing) if (params[:pairings] == "false")
 
-    @items = Array.new
-    @pairings = Array.new
-
-    if(params[:items] != "false")
-      @items = Item.all
+      fulltext params[:search]
+      order_by(:created_at, :desc)
+      paginate per_page: 20, page: params[:page]
     end
 
-    if(params[:pairings] != "false")
-      @pairings = Pairing.all
-    end
-
-    @feed = (@pairings+@items).sort_by(&:created_at).reverse!.paginate(page: params[:page], per_page: 40)
-
-    # @feed = (Pairing.all + Item.all).sort_by(&:created_at).reverse!.paginate(page: params[:page], per_page: 40)
-    # @feed = Item.all.sort_by(&:created_at).reverse!.paginate(page: params[:page], per_page: 20)
-    # @feed = (pairings + items)
+    @feed = @search.results
   end
 
   def help

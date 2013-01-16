@@ -1,0 +1,15 @@
+$('#cardgrid').gridalicious('append', [
+<% @feed.each do |i| %>
+  <% if i.is_a?(Item)%>
+    '<%= j render partial: 'items/item', locals: {:item =>i} %>',
+  <% else %>
+    '<%= j render partial: 'pairings/pairing', locals: {:pairing =>i} %>',
+  <% end%>
+<% end%>
+]);
+
+<% if @feed.next_page %>
+  $('.pagination').replaceWith('<%= j will_paginate(@feed) %>');
+<% else %>
+  $('.pagination').remove();
+<% end %>

@@ -12,7 +12,7 @@
 </div>
 
 <div class="image">
-  <%= link_to(image_tag(item.images.first.medium_url.to_s), "items/#{item.id}", data: {toggle:"modal"}, class: "modallauncher") %>
+  <%= link_to(image_tag(item.images.first.medium_url.to_s), "", data: {toggle:"modal"}, class: "modallauncher", modal: item_path(item)) %>
 </div>
   <div class="cardtitle">
     <%= item.name %>

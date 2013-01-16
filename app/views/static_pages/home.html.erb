@@ -6,20 +6,12 @@
 </h2>
 </div>
 
-<!--testing buttons-->
-<% if params[:items] == "false" %>
-  <%= button("Show Items", params.merge(items: "true"), class: "btn btn-primary") %>
-<% else %>
-  <%= button("HIDE ITEMS", params.merge(items: "false"), class: "btn btn-primary") %>
-<% end %>
 
-<% if params[:pairings] == "false" %>
-  <%= button("SHOW PAIRINGS", params.merge(pairings: "true"), class: "btn btn-primary") %>
-  <%else%>
-  <%= button("HIDE PAIRINGS", params.merge(pairings: "false"), class: "btn btn-primary") %>
-  <%end%>
-<!--testing buttons-->
-  
+<!--search and filter-->
+<%= render partial: 'shared/searchfilter' %>
+<!--search and filter-->
+
+
 <div id="cardgrid">
   <% @feed.each do |i| %>
     <% if i.is_a?(Item)%>

@@ -25,6 +25,13 @@ class Pairing < ActiveRecord::Base
   #Retrieval order
   default_scope order: 'pairings.created_at DESC'
 
+  #Sunspot search
+  searchable do 
+    text :tag_list, :name
+    time :created_at
+    integer :user_id
+  end
+  
   def item_array
     #TODO when making edit form
   end

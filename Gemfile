@@ -13,6 +13,7 @@ gem 'select2-rails'
 #gem 'mini_magick'
 gem 'jquery-fileupload-rails'
 gem 'haml'
+gem 'sunspot_rails'
 #gem 'bootstrap_modal_rails'
 
 # Bundle edge Rails instead:
@@ -29,6 +30,8 @@ group :development, :test do
     gem 'factory_girl_rails', '4.1.0'
     gem 'faker'
     gem 'populator'
+    gem 'sunspot_solr'
+    gem 'rack-mini-profiler'
 end
 
 

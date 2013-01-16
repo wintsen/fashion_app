@@ -33,8 +33,10 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: {minimum: 6}
   validates :password_confirmation, presence: true
 
-  def feed
-    (feed_items + feed_pairings).sort_by(&:created_at).reverse!
+  #Sunspot search
+  searchable do
+    # Used for user feed
+    integer :followed_user_ids, multiple: true
   end
 
   def feed_items

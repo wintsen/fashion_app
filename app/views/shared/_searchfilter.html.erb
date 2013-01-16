@@ -1,0 +1,26 @@
+<!--search and filter-->
+<div class="leftspace">
+<%= form_tag "", method: :get, class: "form-search" do %>
+  <% params.except(:controller,:action,:search,:utf8).each do |p| %>
+  <%= hidden_field_tag p[0], p[1] %>
+  <% end %>
+  <%= text_field_tag :search, params[:search], class: "search-query" %>
+  <%= submit_tag "Search", name: nil, class: "btn" %><i class="icon-ok"></i>
+  <!--filter buttons-->
+  <div class="pull-right rightspace">
+<% if params[:items] == "false" %>
+  <%= button("Show Items", params.merge(items: "true"), class: "btn btn-primary") %>
+<% else %>
+  <%= button("Hide Items", params.merge(items: "false"), class: "btn") %>
+<% end %>
+
+<% if params[:pairings] == "false" %>
+  <%= button("Show Pairings", params.merge(pairings: "true"), class: "btn btn-primary") %>
+  <%else%>
+  <%= button("Hide Pairings", params.merge(pairings: "false"), class: "btn") %>
+  <%end%>
+</div>
+<!--filter buttons-->
+<% end %>
+</div>
+<!--search and filter-->

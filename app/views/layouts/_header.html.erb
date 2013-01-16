@@ -1,8 +1,10 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
     <div class="header">
-      <%= link_to "fashion app", root_path, id: "logo" %>
-      <nav>
+      <%= link_to "fashion app", root_path, id: "logo", class: "leftspace" %>
+      
+
+      <nav class="rightspace">
         <ul class="nav pull-right">
           <% if signed_in? %>
             <li><%= link_to "Feed", feed_user_path(current_user) %></li>
